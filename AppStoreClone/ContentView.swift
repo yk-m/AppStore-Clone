@@ -48,8 +48,8 @@ struct ContentView: View {
                         Text("Arcade")
                     }
                 }
-            Text("Search")
                 .tag(3)
+            Search()
                 .font(.title)
                 .tabItem {
                     VStack {

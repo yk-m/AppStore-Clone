@@ -16,6 +16,7 @@
 		21179B1E234ED11900544933 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21179B1C234ED11900544933 /* LaunchScreen.storyboard */; };
 		21179B29234ED11900544933 /* AppStoreCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21179B28234ED11900544933 /* AppStoreCloneTests.swift */; };
 		21179B34234ED11900544933 /* AppStoreCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21179B33234ED11900544933 /* AppStoreCloneUITests.swift */; };
+		21324E0223580B4B00A84CFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21324E0123580B4B00A84CFA /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		21179B2F234ED11900544933 /* AppStoreCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStoreCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21179B33234ED11900544933 /* AppStoreCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreCloneUITests.swift; sourceTree = "<group>"; };
 		21179B35234ED11900544933 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21324E0123580B4B00A84CFA /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		21179B0D234ED11700544933 /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				21324DFD235804C800A84CFA /* Scenes */,
 				21179B0E234ED11700544933 /* AppDelegate.swift */,
 				21179B10234ED11700544933 /* SceneDelegate.swift */,
 				21179B15234ED11700544933 /* ContentView.swift */,
@@ -137,6 +140,14 @@
 				21179B35234ED11900544933 /* Info.plist */,
 			);
 			path = AppStoreCloneUITests;
+			sourceTree = "<group>";
+		};
+		21324DFD235804C800A84CFA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				21324E0123580B4B00A84CFA /* Search.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				21179B0F234ED11700544933 /* AppDelegate.swift in Sources */,
 				21179B11234ED11700544933 /* SceneDelegate.swift in Sources */,
 				21179B16234ED11700544933 /* ContentView.swift in Sources */,
+				21324E0223580B4B00A84CFA /* Search.swift in Sources */,
 				21179B14234ED11700544933 /* AppStoreClone.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
