@@ -30,7 +30,7 @@ struct ContentView: View {
                         Text("Games")
                     }
                 }
-                .tag(0)
+                .tag(1)
             Text("Apps")
                 .font(.title)
                 .tabItem {
@@ -39,7 +39,7 @@ struct ContentView: View {
                         Text("Apps")
                     }
                 }
-                .tag(0)
+                .tag(2)
             Text("Arcade")
                 .font(.title)
                 .tabItem {
@@ -48,8 +48,8 @@ struct ContentView: View {
                         Text("Arcade")
                     }
                 }
-                .tag(0)
             Text("Search")
+                .tag(3)
                 .font(.title)
                 .tabItem {
                     VStack {
@@ -57,7 +57,7 @@ struct ContentView: View {
                         Text("Search")
                     }
                 }
-                .tag(0)
+                .tag(4)
         }
     }
 }
