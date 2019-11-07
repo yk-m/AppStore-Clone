@@ -11,11 +11,7 @@ import SwiftUI
 struct Search: View {
     var body: some View {
         NavigationView() {
-            VStack {
-                Text("見つける")
-                Text("あなたにおすすめ")
-            }
-            .navigationBarTitle("Search", displayMode: .large)
+            SearchViewControllerWrapper()
         }
     }
 }

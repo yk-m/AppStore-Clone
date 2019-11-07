@@ -1,0 +1,32 @@
+PODS:
+  - Instantiate (4.0.0)
+  - Kingfisher (5.8.1):
+    - Kingfisher/Core (= 5.8.1)
+  - Kingfisher/Core (5.8.1)
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
+
+DEPENDENCIES:
+  - Instantiate
+  - Kingfisher
+  - RealmSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Instantiate
+    - Kingfisher
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Instantiate: 62516e7dde448721c1f5815a9ee7e0669d034d52
+  Kingfisher: de969e451c81ca6c07a454bc36fea84b8b08c3c7
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
+
+PODFILE CHECKSUM: bd9f20a60304a5027ee71d02d500499645e4db80
+
+COCOAPODS: 1.5.3
