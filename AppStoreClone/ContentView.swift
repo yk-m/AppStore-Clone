@@ -16,46 +16,36 @@ struct ContentView: View {
             Text("Today")
                 .font(.title)
                 .tabItem {
-                    VStack {
-                        Image("today")
-                        Text("Today")
-                    }
+                    Image(systemName: "calendar")
+                    Text("Today")
                 }
                 .tag(0)
             Text("Games")
                 .font(.title)
                 .tabItem {
-                    VStack {
-                        Image("games")
-                        Text("Games")
-                    }
+                    Image(systemName: "gamecontroller.fill")
+                    Text("Games")
                 }
                 .tag(1)
             Text("Apps")
                 .font(.title)
                 .tabItem {
-                    VStack {
-                        Image("apps")
-                        Text("Apps")
-                    }
+                    Image(systemName: "square.stack.3d.up.fill")
+                    Text("Apps")
                 }
                 .tag(2)
             Text("Arcade")
                 .font(.title)
                 .tabItem {
-                    VStack {
-                        Image("arcade")
-                        Text("Arcade")
-                    }
+                    Image(systemName: "mappin.and.ellipse")
+                    Text("Arcade")
                 }
                 .tag(3)
             Search()
                 .font(.title)
                 .tabItem {
-                    VStack {
-                        Image("search")
-                        Text("Search")
-                    }
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
                 }
                 .tag(4)
         }
