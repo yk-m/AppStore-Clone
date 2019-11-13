@@ -17,28 +17,16 @@ class SearchRouter {
         self.viewController = viewController
     }
 
-    static func assembleModules() -> UIViewController {
-//        let view = SearchViewControllerWrapper()
-//        let router = SearchRouter(viewController: view)
-//        let repositoryInteractor = RepositoryInteractor()
-//        let bookmarkInteractor = BookmarkInteractor()
-//        let presenter = SearchViewPresenter(view: view,
-//                                          router: router,
-//                                          repositoryInteractor: repositoryInteractor,
-//                                          bookmarkInteractor: bookmarkInteractor)
-//
-//        view.presenter = presenter
-//        repositoryInteractor.delegate = presenter
+    static func assembleModules() -> SearchViewController {
+        let view = SearchViewController()
+        let router = SearchRouter(viewController: view)
+        let presenter = SearchViewPresenter(view: view,
+                                          router: router)
 
-        return UIViewController()
+        view.presenter = presenter
+
+        return view
     }
 }
 
-extension SearchRouter: SearchWireframe {
-
-    func showDetail(repository: Repository) {
-//        let view = DetailRouter.assembleModules(repository: repository)
-//        view.hidesBottomBarWhenPushed = true
-//        viewController?.navigationController?.pushViewController(view, animated: true)
-    }
-}
+extension SearchRouter: SearchWireframe {}

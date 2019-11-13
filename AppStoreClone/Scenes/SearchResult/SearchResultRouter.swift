@@ -8,41 +8,24 @@
 
 import UIKit
 
-protocol SearchResultDelegate: class {
-    
-    func searchHistory(_ searchHistory: SearchResultRouter, didSelect searchText: String?)
-}
-
 class SearchResultRouter {
     
-    weak var delegate: SearchResultDelegate?
-
     private weak var viewController: UIViewController?
 
     init(viewController: UIViewController) {
         self.viewController = viewController
     }
 
-    static func assembleModules(delegate: SearchResultDelegate?) -> SearchResultView {
+    static func assembleModules() -> SearchResultView {
         let view = SearchResultViewController()
         let router = SearchResultRouter(viewController: view)
-        let searchHistoryInteractor = SearchResultInteractor()
         let presenter = SearchResultViewPresenter(view: view,
-                                                   router: router,
-                                                   searchHistoryInteractor: searchHistoryInteractor)
+                                                   router: router)
 
         view.presenter = presenter
-        
-        router.delegate = delegate
-        searchHistoryInteractor.delegate = presenter
         
         return view
     }
 }
 
-extension SearchResultRouter: SearchResultWireframe {
-
-    func select(searchText: String?) {
-        delegate?.searchHistory(self, didSelect: searchText)
-    }
-}
+extension SearchResultRouter: SearchResultWireframe {}

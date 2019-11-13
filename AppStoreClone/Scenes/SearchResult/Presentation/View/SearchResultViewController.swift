@@ -14,8 +14,6 @@ class SearchResultViewController: UIViewController {
         
     @IBOutlet private weak var tableView: UITableView! {
         didSet {
-            tableView.register(UINib(nibName: HistoryCell.className, bundle: nil), forCellReuseIdentifier: HistoryCell.className)
-            
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -29,30 +27,17 @@ class SearchResultViewController: UIViewController {
         return searchController
     }()
     
-    private var items: [RepositorySearchQuery] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                guard let tableView = self.tableView else {
-                    return
-                }
-                tableView.reloadData()
-            }
-        }
-    }
+    private var items: [String] = ["test1", "test2"]
 }
 
 extension SearchResultViewController: SearchResultView {
     
     func listViewDidLoad() {
-        presenter.listViewDidLoad()
+        
     }
     
     func set(searchText: String) {
         searchController.searchBar.text = searchText
-    }
-    
-    func set(queries: [RepositorySearchQuery]) {
-        items = queries
     }
 }
 
@@ -64,14 +49,12 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let newCell = tableView.dequeueReusableCell(with: HistoryCell.self, for: indexPath)
-        newCell.set(keyword: items[indexPath.row].keyword)
-        newCell.delegate = self
+        let newCell = UITableViewCell()
+        newCell.textLabel?.text = items[indexPath.row]
         return newCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectRow(query: items[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -79,16 +62,14 @@ extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource
 // MARK: - UISearchControllerDelegate
 extension SearchResultViewController: UISearchControllerDelegate {
     
-    func willPresentSearchController(_ searchController: UISearchController) {
-        presenter.willPresentSearchController()
-    }
+    func willPresentSearchController(_ searchController: UISearchController) {}
 }
 
 // MARK: - UISearchResultsUpdating
 extension SearchResultViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        presenter.updateSearchResults(searchText: searchController.searchBar.text)
+//        presenter.updateSearchResults(searchText: searchController.searchBar.text)
     }
 }
 

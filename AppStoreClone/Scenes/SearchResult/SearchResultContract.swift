@@ -16,22 +16,15 @@ protocol SearchResultView: class {
     
     func listViewDidLoad()
     func set(searchText: String)
-    func set(queries: [RepositorySearchQuery])
 }
 
 // MARK: - presenter
 protocol SearchResultViewPresentable: class {
     
-    func listViewDidLoad()
     func willPresentSearchController()
-    func didSelectRow(query: RepositorySearchQuery)
-    func updateSearchResults(searchText: String?)
     func searchBarSearchButtonClicked(searchText: String?)
     func searchBarCancelButtonClicked()
 }
 
 // MARK: - router
-protocol SearchResultWireframe: class {
-
-    func select(searchText: String?)
-}
+protocol SearchResultWireframe: class {}

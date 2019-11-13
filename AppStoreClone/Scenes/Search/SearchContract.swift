@@ -9,26 +9,10 @@
 import Foundation
 
 // MARK: - view
-protocol SearchView: class {
-    
-    func set(repositories: [Repository])
-    func beginRefreshing()
-    func presentAlert(title: String, message: String)
-}
+protocol SearchView: class {}
 
 // MARK: - presenter
-protocol SearchViewPresentable: class {
-    
-    var searchHisotryDelegate: SearchResultDelegate { get }
-    
-    func didSelectRow(repository: Repository)
-    func refresh()
-    
-    func didTouchBookmarkButton(repository: Repository, isBookmarked: Bool)
-}
+protocol SearchViewPresentable: class {}
 
 // MARK: - router
-protocol SearchWireframe: class {
-    
-    func showDetail(repository: Repository)
-}
+protocol SearchWireframe: class {}

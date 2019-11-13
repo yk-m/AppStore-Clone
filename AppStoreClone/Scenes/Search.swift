@@ -8,11 +8,16 @@
 
 import SwiftUI
 
-struct Search: View {
-    var body: some View {
-        NavigationView() {
-            SearchViewControllerWrapper()
-        }
+struct Search: UIViewControllerRepresentable {
+
+    typealias UIViewControllerType = UINavigationController
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<Search>) -> Search.UIViewControllerType {
+        return UINavigationController(rootViewController: SearchRouter.assembleModules())
+    }
+
+    func updateUIViewController(_ uiViewController: Search.UIViewControllerType, context: UIViewControllerRepresentableContext<Search>) {
+        uiViewController.navigationBar.prefersLargeTitles = true
     }
 }
 
