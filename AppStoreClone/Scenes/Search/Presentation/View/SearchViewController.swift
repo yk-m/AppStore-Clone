@@ -1,26 +1,21 @@
 //
 //  SearchViewController.swift
-//  AppStoreClone
+//  Practice
 //
-//  Created by sci01725 on 2019/11/14.
-//  Copyright © 2019 Yuka Matsuo. All rights reserved.
+//  Created by Yuka Matsuo on 16/12/2018.
+//  Copyright © 2018 yuka. All rights reserved.
 //
 
 import UIKit
+import SwiftUI
 
-class SearchViewController: UIViewController {
-    
+
+class SearchViewController: UITableViewController {
+
     var presenter: SearchViewPresentable!
-        
-    @IBOutlet private weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-        }
-    }
     
-    private lazy var searchResultView = SearchResultRouter.assembleModules()
-    private lazy var searchController: UISearchController = searchResultView.searchController
+    private lazy var searchHistoryView = SearchResultRouter.assembleModules()
+    private lazy var searchController: UISearchController = searchHistoryView.searchController
     
     private var items: [String] = ["test1", "test2"]
         
@@ -33,7 +28,7 @@ class SearchViewController: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        searchResultView.listViewDidLoad()
+        searchHistoryView.listViewDidLoad()
         
         tableView.separatorStyle = .none
         tableView.backgroundColor = .almostWhite
@@ -41,22 +36,18 @@ class SearchViewController: UIViewController {
         edgesForExtendedLayout = .all
         tableView.contentInsetAdjustmentBehavior = .always
     }
-}
-
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let newCell = UITableViewCell()
         newCell.textLabel?.text = items[indexPath.row];
         return newCell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
