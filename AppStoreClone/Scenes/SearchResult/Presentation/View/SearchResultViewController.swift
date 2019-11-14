@@ -24,6 +24,7 @@ class SearchResultViewController: UIViewController {
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
         return searchController
     }()
     
