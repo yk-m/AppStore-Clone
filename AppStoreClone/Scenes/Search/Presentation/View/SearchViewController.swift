@@ -14,8 +14,8 @@ class SearchViewController: UITableViewController {
 
     var presenter: SearchViewPresentable!
     
-    private lazy var searchHistoryView = SearchResultRouter.assembleModules()
-    private lazy var searchController: UISearchController = searchHistoryView.searchController
+    private lazy var searchResultView = SearchResultRouter.assembleModules()
+    private lazy var searchController: UISearchController = searchResultView.searchController
     
     private var items: [String] = ["test1", "test2"]
         
@@ -28,7 +28,7 @@ class SearchViewController: UITableViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        searchHistoryView.listViewDidLoad()
+        searchResultView.listViewDidLoad()
         
         tableView.separatorStyle = .none
         tableView.backgroundColor = .almostWhite
