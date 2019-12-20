@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionHeaderView" customModule="AppStoreClone" customModuleProvider="target">
+            <connections>
+                <outlet property="titleView" destination="pK2-n0-wcW" id="M0t-QF-KUW"/>
+                <outlet property="view" destination="8e3-uB-5Yo" id="Cld-zz-lZB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SectionHeaderView" customModule="AppStoreClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8e3-uB-5Yo">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK2-n0-wcW">
+                    <rect key="frame" x="20" y="17.5" width="74" height="34"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8e3-uB-5Yo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9Uq-ps-n8j"/>
+                <constraint firstItem="8e3-uB-5Yo" firstAttribute="centerY" secondItem="pK2-n0-wcW" secondAttribute="centerY" id="K3d-FJ-74O"/>
+                <constraint firstItem="pK2-n0-wcW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="QXV-Ne-riH"/>
+                <constraint firstItem="8e3-uB-5Yo" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="TTM-Mb-pmQ"/>
+                <constraint firstItem="8e3-uB-5Yo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="md1-Ue-hvy"/>
+                <constraint firstItem="8e3-uB-5Yo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n43-Vd-evb"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="2.8985507246376816" y="-13.058035714285714"/>
+        </view>
+    </objects>
+</document>

@@ -16,11 +16,21 @@ extension UITableView {
         register(nib, forCellReuseIdentifier: className)
     }
     
+    public func register(cellType: UITableViewHeaderFooterView.Type, bundle: Bundle? = nil) {
+        let className = cellType.className
+        let nib = UINib(nibName: className, bundle: bundle)
+        register(nib, forHeaderFooterViewReuseIdentifier: className)
+    }
+    
     public func register(cellTypes: [UITableViewCell.Type], bundle: Bundle? = nil) {
         cellTypes.forEach { register(cellType: $0, bundle: bundle) }
     }
     
     public func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
         return self.dequeueReusableCell(withIdentifier: type.className, for: indexPath) as! T
+    }
+    
+    public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(with type: T.Type) -> T {
+        return self.dequeueReusableHeaderFooterView(withIdentifier: type.className) as! T
     }
 }

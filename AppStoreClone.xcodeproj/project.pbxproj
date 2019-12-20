@@ -28,6 +28,8 @@
 		215870D42373B5D900180D28 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870C52373B5D900180D28 /* HistoryCell.swift */; };
 		215870D52373B5D900180D28 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870C62373B5D900180D28 /* SearchResultViewController.swift */; };
 		215870D62373B5D900180D28 /* SearchResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870C72373B5D900180D28 /* SearchResultPresenter.swift */; };
+		219604F423ACB276000734AA /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219604F323ACB276000734AA /* SectionHeaderView.swift */; };
+		219604F623ACB286000734AA /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219604F523ACB286000734AA /* SectionHeaderView.xib */; };
 		21F5B3E62373BA9F0071060B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3E52373BA9F0071060B /* String+extension.swift */; };
 		21F5B3EF2373BAD00071060B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3E82373BACF0071060B /* UITableView+extension.swift */; };
 		21F5B3F02373BAD00071060B /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3E92373BACF0071060B /* NSObject+extension.swift */; };
@@ -84,6 +86,8 @@
 		215870C52373B5D900180D28 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		215870C62373B5D900180D28 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		215870C72373B5D900180D28 /* SearchResultPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultPresenter.swift; sourceTree = "<group>"; };
+		219604F323ACB276000734AA /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		219604F523ACB286000734AA /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		21F5B3E52373BA9F0071060B /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		21F5B3E82373BACF0071060B /* UITableView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		21F5B3E92373BACF0071060B /* NSObject+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+extension.swift"; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 		215870B72373B5D900180D28 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				219604F223ACB243000734AA /* SubViews */,
 				215870B82373B5D900180D28 /* SearchViewController.swift */,
 			);
 			path = View;
@@ -267,6 +272,15 @@
 				215870C52373B5D900180D28 /* HistoryCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		219604F223ACB243000734AA /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				219604F323ACB276000734AA /* SectionHeaderView.swift */,
+				219604F523ACB286000734AA /* SectionHeaderView.xib */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		21F5B3E42373BA950071060B /* Environment */ = {
@@ -413,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				215870D22373B5D900180D28 /* SearchHistoryViewController.xib in Resources */,
+				219604F623ACB286000734AA /* SectionHeaderView.xib in Resources */,
 				21179B1E234ED11900544933 /* LaunchScreen.storyboard in Resources */,
 				21179B1B234ED11900544933 /* Preview Assets.xcassets in Resources */,
 				215870D32373B5D900180D28 /* HistoryCell.xib in Resources */,
@@ -514,6 +529,7 @@
 				21179B0F234ED11700544933 /* AppDelegate.swift in Sources */,
 				215870C92373B5D900180D28 /* SearchRouter.swift in Sources */,
 				21F5B3F12373BAD00071060B /* UIColor+extension.swift in Sources */,
+				219604F423ACB276000734AA /* SectionHeaderView.swift in Sources */,
 				21F5B3EF2373BAD00071060B /* UITableView+extension.swift in Sources */,
 				215870CA2373B5D900180D28 /* SearchPresenter.swift in Sources */,
 				21F5B3F02373BAD00071060B /* NSObject+extension.swift in Sources */,
