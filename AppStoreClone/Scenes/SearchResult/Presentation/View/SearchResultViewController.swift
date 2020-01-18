@@ -8,16 +8,9 @@
 
 import UIKit
 
-class SearchResultViewController: UIViewController {
+class SearchResultViewController: UITableViewController {
     
     var presenter: SearchResultViewPresentable!
-        
-    @IBOutlet private weak var tableView: UITableView! {
-        didSet {
-            tableView.delegate = self
-            tableView.dataSource = self
-        }
-    }
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: self)
@@ -28,9 +21,47 @@ class SearchResultViewController: UIViewController {
         return searchController
     }()
     
-    private var items: [String] = ["test1", "test2"]
+    private var items: [String] = ["賃貸物件検索", "アルバイト"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        definesPresentationContext = true
+        extendedLayoutIncludesOpaqueBars = true
+        
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = .white
+        
+        tableView.register(cellType: SectionHeaderView.self)
+        tableView.register(cellType: PredictionCell.self)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableHeaderFooterView(with: SectionHeaderView.self)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 16
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let newCell = tableView.dequeueReusableCell(with: PredictionCell.self, for: indexPath)
+        newCell.set(title: items[indexPath.row])
+        return newCell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
+// MARK: - SearchResultView
 extension SearchResultViewController: SearchResultView {
     
     func listViewDidLoad() {
@@ -39,24 +70,6 @@ extension SearchResultViewController: SearchResultView {
     
     func set(searchText: String) {
         searchController.searchBar.text = searchText
-    }
-}
-
-// MARK: - UITableViewDelegate, UITableViewDataSource
-extension SearchResultViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let newCell = UITableViewCell()
-        newCell.textLabel?.text = items[indexPath.row]
-        return newCell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

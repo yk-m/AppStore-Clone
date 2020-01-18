@@ -22,7 +22,6 @@
 		215870CA2373B5D900180D28 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870B52373B5D900180D28 /* SearchPresenter.swift */; };
 		215870CF2373B5D900180D28 /* SearchResultContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870BD2373B5D900180D28 /* SearchResultContract.swift */; };
 		215870D02373B5D900180D28 /* SearchResultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870BE2373B5D900180D28 /* SearchResultRouter.swift */; };
-		215870D22373B5D900180D28 /* SearchHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215870C22373B5D900180D28 /* SearchHistoryViewController.xib */; };
 		215870D32373B5D900180D28 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215870C42373B5D900180D28 /* HistoryCell.xib */; };
 		215870D42373B5D900180D28 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870C52373B5D900180D28 /* HistoryCell.swift */; };
 		215870D52373B5D900180D28 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215870C62373B5D900180D28 /* SearchResultViewController.swift */; };
@@ -32,7 +31,6 @@
 		21F5B3E62373BA9F0071060B /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3E52373BA9F0071060B /* String+extension.swift */; };
 		21F5B3EF2373BAD00071060B /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3E82373BACF0071060B /* UITableView+extension.swift */; };
 		21F5B3F02373BAD00071060B /* NSObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3E92373BACF0071060B /* NSObject+extension.swift */; };
-		21F5B3F12373BAD00071060B /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3EA2373BACF0071060B /* UIColor+extension.swift */; };
 		21F5B3F22373BAD00071060B /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3EB2373BACF0071060B /* UIView+extension.swift */; };
 		21F5B3F42373BAD00071060B /* UIAlertController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5B3ED2373BAD00071060B /* UIAlertController+extension.swift */; };
 		2CC0C67B097B564A8874DA2D /* Pods_AppStoreCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273C2A9A813818854650653B /* Pods_AppStoreCloneTests.framework */; };
@@ -44,6 +42,8 @@
 		B2431DFF23D3066600B461DB /* ExploreHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2431DFD23D3066600B461DB /* ExploreHeaderCell.swift */; };
 		B2431E0023D3066600B461DB /* ExploreHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2431DFE23D3066600B461DB /* ExploreHeaderCell.xib */; };
 		B2431E0223D3086400B461DB /* ExploreCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2431E0123D3086400B461DB /* ExploreCellType.swift */; };
+		B2431E0523D326A400B461DB /* PredictionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2431E0323D326A400B461DB /* PredictionCell.swift */; };
+		B2431E0623D326A400B461DB /* PredictionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2431E0423D326A400B461DB /* PredictionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,6 @@
 		215870B52373B5D900180D28 /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		215870BD2373B5D900180D28 /* SearchResultContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultContract.swift; sourceTree = "<group>"; };
 		215870BE2373B5D900180D28 /* SearchResultRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultRouter.swift; sourceTree = "<group>"; };
-		215870C22373B5D900180D28 /* SearchHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchHistoryViewController.xib; sourceTree = "<group>"; };
 		215870C42373B5D900180D28 /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		215870C52373B5D900180D28 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		215870C62373B5D900180D28 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 		21F5B3E52373BA9F0071060B /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		21F5B3E82373BACF0071060B /* UITableView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		21F5B3E92373BACF0071060B /* NSObject+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+extension.swift"; sourceTree = "<group>"; };
-		21F5B3EA2373BACF0071060B /* UIColor+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		21F5B3EB2373BACF0071060B /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		21F5B3ED2373BAD00071060B /* UIAlertController+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+extension.swift"; sourceTree = "<group>"; };
 		26F2EABF6DFA99D7FF22489C /* Pods-AppStoreClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppStoreClone/Pods-AppStoreClone.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +110,8 @@
 		B2431DFD23D3066600B461DB /* ExploreHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHeaderCell.swift; sourceTree = "<group>"; };
 		B2431DFE23D3066600B461DB /* ExploreHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreHeaderCell.xib; sourceTree = "<group>"; };
 		B2431E0123D3086400B461DB /* ExploreCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCellType.swift; sourceTree = "<group>"; };
+		B2431E0323D326A400B461DB /* PredictionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionCell.swift; sourceTree = "<group>"; };
+		B2431E0423D326A400B461DB /* PredictionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PredictionCell.xib; sourceTree = "<group>"; };
 		FFB2748F608782CC201118E0 /* Pods_AppStoreCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				B2431DF823D2FE7600B461DB /* Cells */,
-				219604F223ACB243000734AA /* SubViews */,
 				B2431DF523D2F8BC00B461DB /* SearchViewController.swift */,
 			);
 			path = View;
@@ -269,7 +268,7 @@
 		215870C12373B5D900180D28 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				215870C22373B5D900180D28 /* SearchHistoryViewController.xib */,
+				219604F223ACB243000734AA /* SubViews */,
 				215870C32373B5D900180D28 /* Cell */,
 				215870C62373B5D900180D28 /* SearchResultViewController.swift */,
 			);
@@ -281,6 +280,8 @@
 			children = (
 				215870C42373B5D900180D28 /* HistoryCell.xib */,
 				215870C52373B5D900180D28 /* HistoryCell.swift */,
+				B2431E0323D326A400B461DB /* PredictionCell.swift */,
+				B2431E0423D326A400B461DB /* PredictionCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -299,7 +300,6 @@
 			children = (
 				21F5B3E92373BACF0071060B /* NSObject+extension.swift */,
 				21F5B3ED2373BAD00071060B /* UIAlertController+extension.swift */,
-				21F5B3EA2373BACF0071060B /* UIColor+extension.swift */,
 				21F5B3E82373BACF0071060B /* UITableView+extension.swift */,
 				21F5B3EB2373BACF0071060B /* UIView+extension.swift */,
 				21F5B3E52373BA9F0071060B /* String+extension.swift */,
@@ -450,10 +450,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2431E0023D3066600B461DB /* ExploreHeaderCell.xib in Resources */,
-				215870D22373B5D900180D28 /* SearchHistoryViewController.xib in Resources */,
 				219604F623ACB286000734AA /* SectionHeaderView.xib in Resources */,
 				21179B1E234ED11900544933 /* LaunchScreen.storyboard in Resources */,
 				21179B1B234ED11900544933 /* Preview Assets.xcassets in Resources */,
+				B2431E0623D326A400B461DB /* PredictionCell.xib in Resources */,
 				B2431DFC23D2FEB800B461DB /* ExploreTextCell.xib in Resources */,
 				215870D32373B5D900180D28 /* HistoryCell.xib in Resources */,
 				21179B18234ED11900544933 /* Assets.xcassets in Resources */,
@@ -553,7 +553,6 @@
 				215870CF2373B5D900180D28 /* SearchResultContract.swift in Sources */,
 				21179B0F234ED11700544933 /* AppDelegate.swift in Sources */,
 				215870C92373B5D900180D28 /* SearchRouter.swift in Sources */,
-				21F5B3F12373BAD00071060B /* UIColor+extension.swift in Sources */,
 				219604F423ACB276000734AA /* SectionHeaderView.swift in Sources */,
 				21F5B3EF2373BAD00071060B /* UITableView+extension.swift in Sources */,
 				215870CA2373B5D900180D28 /* SearchPresenter.swift in Sources */,
@@ -563,6 +562,7 @@
 				21179B11234ED11700544933 /* SceneDelegate.swift in Sources */,
 				215870D62373B5D900180D28 /* SearchResultPresenter.swift in Sources */,
 				B2431DFB23D2FEB700B461DB /* ExploreTextCell.swift in Sources */,
+				B2431E0523D326A400B461DB /* PredictionCell.swift in Sources */,
 				215870D02373B5D900180D28 /* SearchResultRouter.swift in Sources */,
 				B2431DF723D2F8BD00B461DB /* SearchViewController.swift in Sources */,
 				21179B16234ED11700544933 /* ContentView.swift in Sources */,

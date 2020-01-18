@@ -1,14 +1,14 @@
 //
-//  SectionHeaderView.swift
+//  PredictionCell.swift
 //  AppStoreClone
 //
-//  Created by SCI01725 on 2019/12/20.
-//  Copyright © 2019 Yuka Matsuo. All rights reserved.
+//  Created by yuka on 2020/01/18.
+//  Copyright © 2020 Yuka Matsuo. All rights reserved.
 //
 
 import UIKit
 
-class SectionHeaderView: UITableViewHeaderFooterView {
+class PredictionCell: UITableViewCell {
     
     @IBOutlet private weak var titleLabel: UILabel!
     

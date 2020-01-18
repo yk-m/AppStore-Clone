@@ -27,7 +27,7 @@ class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        definesPresentationContext = true
+        extendedLayoutIncludesOpaqueBars = true
         
         navigationItem.title = "Search"
         navigationItem.searchController = searchController
@@ -35,17 +35,14 @@ class SearchViewController: UITableViewController {
         
         searchResultView.listViewDidLoad()
         
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .almostWhite
-        
         edgesForExtendedLayout = .all
-        tableView.contentInsetAdjustmentBehavior = .always
+        
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
         
         tableView.register(cellType: ExploreHeaderCell.self)
         tableView.register(cellType: ExploreTextCell.self)
-        
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
