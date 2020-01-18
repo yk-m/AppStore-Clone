@@ -9,10 +9,10 @@
 import UIKit
 
 class PredictionCell: UITableViewCell {
+        
+    @IBOutlet private weak var keywordLabel: UILabel!
     
-    @IBOutlet private weak var titleLabel: UILabel!
-    
-    public func set(title: String) {
-        titleLabel.text = title
+    public func set(keyword: String) {
+        keywordLabel.text = keyword
     }
 }
