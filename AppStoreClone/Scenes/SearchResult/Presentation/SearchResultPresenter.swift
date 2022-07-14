@@ -29,11 +29,24 @@ class SearchResultViewPresenter {
     }
 }
 
+// MARK: - SearchResultViewPresentable
 extension SearchResultViewPresenter: SearchResultViewPresentable {
     
-    func willPresentSearchController() {}
+    func showSearchResult(searchText: String) {
+        self.searchText = searchText
+    }
+    
+    func updateSearchResults(searchText: String?) {
+        guard searchText == self.searchText else {
+            return
+        }
+        view?.showPredictions()
+    }
     
     func searchBarSearchButtonClicked(searchText: String?) {
+        guard searchText == self.searchText else {
+            return
+        }
         self.searchText = searchText
     }
     

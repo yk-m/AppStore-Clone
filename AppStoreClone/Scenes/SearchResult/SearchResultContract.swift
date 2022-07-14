@@ -14,14 +14,16 @@ protocol SearchResultView: class {
     
     var searchController: UISearchController { get }
     
-    func listViewDidLoad()
     func set(searchText: String)
+    func showSearchResult(searchText: String)
+    func showPredictions()
 }
 
 // MARK: - presenter
 protocol SearchResultViewPresentable: class {
     
-    func willPresentSearchController()
+    func showSearchResult(searchText: String)
+    func updateSearchResults(searchText: String?)
     func searchBarSearchButtonClicked(searchText: String?)
     func searchBarCancelButtonClicked()
 }

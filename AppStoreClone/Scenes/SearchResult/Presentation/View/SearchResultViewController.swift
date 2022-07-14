@@ -21,13 +21,19 @@ class SearchResultViewController: UITableViewController {
         return searchController
     }()
     
-    private var shouldShowApps: Bool = false {
+    private var status: SearchResultStatus = .predictions {
         didSet {
+            if status == .loading {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.status = .apps
+                }
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
+    
     private var predictions: [String] = ["賃貸物件検索", "アルバイト"]
     private var apps = [
         StoreApp(title: "ニフティ不動産", description: "お家さがしアプリはニフティ不動産", rating: 4.2, ratingCount: "32K", iconImage: UIImage(named: "fudosan-icon"), descriptionImage: UIImage(named: "fudosan-description")),
@@ -57,32 +63,44 @@ class SearchResultViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (shouldShowApps) {
+        switch status {
+        case .apps, .loading:
             return 0
+        case .predictions:
+            return 16
         }
-        return 16
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (shouldShowApps) {
+        switch status {
+        case .apps:
             return apps.count
+        case .predictions:
+            return predictions.count
+        case .loading:
+            return 0
         }
-        return predictions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (shouldShowApps) {
+        switch status {
+        case .apps:
             let newCell = tableView.dequeueReusableCell(with: AppCell.self, for: indexPath)
             newCell.set(app: apps[indexPath.row])
             return newCell
+        case .predictions:
+            let newCell = tableView.dequeueReusableCell(with: PredictionCell.self, for: indexPath)
+            newCell.set(keyword: predictions[indexPath.row])
+            return newCell
+        case .loading:
+            return UITableViewCell()
         }
-        let newCell = tableView.dequeueReusableCell(with: PredictionCell.self, for: indexPath)
-        newCell.set(keyword: predictions[indexPath.row])
-        return newCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        shouldShowApps = !shouldShowApps
+        if status == .predictions {
+            set(searchText: predictions[indexPath.row])
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -90,26 +108,34 @@ class SearchResultViewController: UITableViewController {
 // MARK: - SearchResultView
 extension SearchResultViewController: SearchResultView {
     
-    func listViewDidLoad() {
-        
-    }
-    
     func set(searchText: String) {
         searchController.searchBar.text = searchText
+        status = .loading
+    }
+    
+    func showSearchResult(searchText: String) {
+        presenter.showSearchResult(searchText: searchText)
+        searchController.isActive = true
+    }
+    
+    func showPredictions() {
+        status = .predictions
     }
 }
 
 // MARK: - UISearchControllerDelegate
 extension SearchResultViewController: UISearchControllerDelegate {
     
-    func willPresentSearchController(_ searchController: UISearchController) {}
+    func didDismissSearchController(_ searchController: UISearchController) {
+        status = .predictions
+    }
 }
 
 // MARK: - UISearchResultsUpdating
 extension SearchResultViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-//        presenter.updateSearchResults(searchText: searchController.searchBar.text)
+        presenter.updateSearchResults(searchText: searchController.searchBar.text)
     }
 }
 

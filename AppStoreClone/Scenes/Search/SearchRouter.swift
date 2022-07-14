@@ -29,4 +29,5 @@ class SearchRouter {
     }
 }
 
+// MARK: - SearchWireframe
 extension SearchRouter: SearchWireframe {}

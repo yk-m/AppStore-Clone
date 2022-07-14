@@ -32,9 +32,7 @@ class SearchViewController: UITableViewController {
         navigationItem.title = "Search"
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        
-        searchResultView.listViewDidLoad()
-        
+                
         edgesForExtendedLayout = .all
         
         tableView.separatorStyle = .none
@@ -57,7 +55,10 @@ class SearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        if case .text(let content, _) = items[indexPath.row] {
+            searchResultView.showSearchResult(searchText: content)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }
 

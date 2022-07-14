@@ -22,4 +22,5 @@ class SearchViewPresenter {
     }
 }
 
+// MARK: - SearchViewPresentable
 extension SearchViewPresenter: SearchViewPresentable {}

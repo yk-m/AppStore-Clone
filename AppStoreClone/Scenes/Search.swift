@@ -21,6 +21,7 @@ struct Search: UIViewControllerRepresentable {
     }
 }
 
+// MARK: - PreviewProvider
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
         Search()

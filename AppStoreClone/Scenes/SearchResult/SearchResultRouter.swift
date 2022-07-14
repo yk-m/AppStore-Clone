@@ -28,4 +28,5 @@ class SearchResultRouter {
     }
 }
 
+// MARK: - SearchResultWireframe
 extension SearchResultRouter: SearchResultWireframe {}
